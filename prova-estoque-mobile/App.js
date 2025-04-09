@@ -1,5 +1,5 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer,  } from '@react-navigation/native';
+import { StyleSheet} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Login from './Screens/login';
@@ -13,13 +13,13 @@ export default function App() {
     return(
     <Drawer.Navigator>
       <Drawer.Screen name='estoque' component={Estoque}/>
-      <Drawer.Screen name='fale' component={Faleconosco}/>
+      <Drawer.Screen options={{title:'Fale conosco'}} name='fale' component={Faleconosco}/>
     </Drawer.Navigator>
     )
   }
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
+    <NavigationContainer >
+      <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name='login' component={Login}/>
         <Stack.Screen name='telas' component={Telas}/>
       </Stack.Navigator>
@@ -30,7 +30,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#Ad907a',
     alignItems: 'center',
     justifyContent: 'center',
   },
